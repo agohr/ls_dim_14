@@ -79,7 +79,7 @@ If you use this code or data in your research, please cite the paper. The URL an
 
 ```bibtex
 @unpublished{GLSD26,
-  author = {Gohr, Aron and Lawn, Marie-Amelie and Schedler, Travis and Daura Serrano, Jordi},
+  author = {Daura Serrano, Jordi and Gohr, Aron and Lawn, Marie-Amelie and Schedler, Travis},
   title  = {The {LeBrun--Salamon} conjecture is true in dimensions up to 56},
   note   = {Manuscript},
   year   = {2026},
