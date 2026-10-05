@@ -1,6 +1,6 @@
 # Supplementary Code and Data for the Paper "The LeBrun–Salamon conjecture is true in dimensions up to 56"
 
-**Authors:** Aron Gohr, Marie-Amelie Lawn, Travis Schedler and Jordi Daura Serrano.
+**Authors:** Jordi Daura Serrano, Aron Gohr, Marie-Amelie Lawn, and Travis Schedler.
 
 This repository contains exact Python checks of the finite identities and a
 Lean development of conditional symmetry results for compact connected
