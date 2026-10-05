@@ -84,12 +84,23 @@ the generator does not certify their fidelity to the literature.
 
 ## GitHub Pages
 
-The prepared workflow uses `lean/` as the Lake package directory, checks the
-Python identities, builds and audits Lean, compares the exported graph, and
-checks the site and archive. Its directory setting is documented by
+The prepared workflow checks the Python identities, generated site and archive
+before the long Lean build. It uses `lean/` as the Lake package directory,
+builds and audits Lean, and compares the exported graph. Its directory setting
+is documented by
 [lean-action](https://github.com/leanprover/lean-action#configuration).
 The uploaded Pages artifact is the `site/` directory. Repository-root files
 and Lean build caches are not deployed as web assets.
+
+The verification job uses GitHub's Ubuntu 24.04 runner. A full local toolchain,
+mathlib build and project build occupy about 18 GiB, exceeding the standard
+runner's [advertised 14 GB of storage](https://docs.github.com/en/actions/reference/runners/github-hosted-runners).
+Before installing Lean, the workflow
+removes unused Android, .NET, Swift and Haskell SDKs from that disposable
+runner and requires at least 30 GiB free for the build and cache archives.
+It reports disk usage after verification, including on failure. The existing
+Lean and mathlib caches remain enabled; proof checks and the audit are unchanged.
+When editing `LICENSE`, regenerate the site to update `site/data/LICENSE.txt`.
 
 The repository URL is set in `config.repository_url` in
 `site-data/catalogue.json`. Regenerate the site after changing it; a blank
