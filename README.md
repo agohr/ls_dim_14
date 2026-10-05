@@ -12,7 +12,7 @@ positive quaternionic-Kähler manifolds.
   data, and descriptions of the identities checked.
 - [lean/](lean/README.md): the Lean development, pinned dependencies, and build
   instructions.
-- [Lean code comparison and search](site/lean/index.html): a static browser for
+- [Lean code comparison and search](https://agohr.github.io/ls_dim_14/lean/): a static browser for
   theorem statements, definitions, and their mathematical explanations.
   To use it offline, open `site/lean/index.html` in a browser after downloading
   the repository; GitHub's file view displays the HTML source.
@@ -58,7 +58,7 @@ Wolf spaces is not part of these endpoint statements.
 The Python scripts verify polynomial identities and coefficient signs. They
 do not establish the geometric interpretations or the literature inputs.
 The exact statements and source comparisons can be read in the
-[Lean explorer](site/lean/index.html).
+[Lean explorer](https://agohr.github.io/ls_dim_14/lean/).
 
 ## Offline browsing
 
@@ -94,4 +94,3 @@ The mathematical Lean sources are unchanged from development commit
 The [source manifest](site-data/source-manifest.json) records paths relative
 to that directory and their SHA-256 hashes. See [VALIDATION.md](VALIDATION.md)
 for checks and [PUBLICATION.md](PUBLICATION.md) for site maintenance.
-

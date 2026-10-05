@@ -4,7 +4,7 @@ Conditional symmetry results for compact connected positive
 quaternionic-Kähler manifolds, using Lean 4.28.0 and mathlib v4.28.0.
 
 [Repository overview](../README.md) ·
-[Code comparison and search](../site/lean/index.html)
+[Code comparison and search](https://agohr.github.io/ls_dim_14/lean/)
 
 The comparison page contains the exact Lean source, elaborated types,
 mathematical paraphrases, references, and links to supporting definitions.
