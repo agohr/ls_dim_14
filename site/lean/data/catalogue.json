@@ -1,0 +1,579 @@
+{
+  "config": {
+    "title": "Supplementary Code and Data for the Paper \"The LeBrun–Salamon conjecture is true in dimensions up to 56\"",
+    "repository_url": "https://github.com/agohr/ls_dim_14",
+    "default_branch": "main",
+    "license_status": "MIT",
+    "snapshot_date": "2026-10-04",
+    "repository_name": "ls_dim_14"
+  },
+  "references": {
+    "orsw": {
+      "authors": "G. Occhetta, E. A. Romano, L. E. Solá Conde, J. A. Wiśniewski",
+      "title": "High rank torus actions on contact manifolds",
+      "publication": "Selecta Mathematica 27 (2021), article 10",
+      "url": "https://link.springer.com/article/10.1007/s00029-021-00621-w",
+      "version": "Publisher version; Theorem 5.1, p. 18."
+    },
+    "bww": {
+      "authors": "J. Buczyński, J. A. Wiśniewski; appendix with A. Weber",
+      "title": "Algebraic torus actions on contact manifolds",
+      "publication": "Accepted author manuscript, arXiv:1802.05002v3",
+      "url": "https://arxiv.org/abs/1802.05002v3",
+      "version": "Locators refer to version 3, 13 September 2020, not to final journal pagination."
+    },
+    "bkk": {
+      "authors": "J. Buczyński, G. Kapustka, M. Kapustka",
+      "title": "Special lines on contact manifolds",
+      "publication": "Annales de l’Institut Fourier 72 (2022), 1859–1909",
+      "url": "https://aif.centre-mersenne.org/item/10.5802/aif.3510.pdf",
+      "version": "Publisher PDF; Proposition 2.3, p. 1864."
+    },
+    "nt": {
+      "authors": "Y. Nitta, M. Takeuchi",
+      "title": "Contact structures on twistor spaces",
+      "publication": "Journal of the Mathematical Society of Japan 39 (1987), 139–162",
+      "url": "https://www.jstage.jst.go.jp/article/jmath1948/39/1/39_1_139/_pdf",
+      "version": "Publisher PDF; printed pagination."
+    },
+    "petersen": {
+      "authors": "P. Petersen",
+      "title": "Riemannian Geometry",
+      "publication": "Third edition, Springer GTM 171 (2016); DOI 10.1007/978-3-319-26654-1",
+      "url": "https://www.math.ucla.edu/~petersen/RG.pdf",
+      "version": "Theorem 5.6.19; locators pp. 168–172 refer to the September 2015 author copy reviewed for the development. The linked author file can change."
+    },
+    "lee": {
+      "authors": "J. M. Lee",
+      "title": "Introduction to Smooth Manifolds",
+      "publication": "Second edition, Springer GTM 218 (2013)",
+      "url": "https://doi.org/10.1007/978-1-4419-9982-5",
+      "version": "Closed Subgroup Theorem 20.12, pp. 523–525; continuous homomorphisms, Theorem 20.10."
+    },
+    "filz": {
+      "authors": "P. J. Forrester, J. R. Ipsen, D.-Z. Liu, L. Zhang",
+      "title": "Orthogonal and symplectic Harish-Chandra integrals and matrix product ensembles",
+      "publication": "Random Matrices: Theory and Applications 8 (2019), 1950015",
+      "url": "https://arxiv.org/abs/1711.10691v1",
+      "version": "Equations (1.5), (1.6), (1.8); arXiv version 1. Journal DOI 10.1142/S2010326319500151."
+    },
+    "wells": {
+      "authors": "R. O. Wells, Jr.",
+      "title": "Differential Analysis on Complex Manifolds",
+      "publication": "Third edition, Springer GTM 65 (2008)",
+      "url": "https://doi.org/10.1007/978-0-387-73892-5",
+      "version": "Chapter VI, §4, Theorem 4.1 and its proof, pp. 234–240."
+    },
+    "sw": {
+      "authors": "U. Semmelmann, G. Weingart",
+      "title": "An upper bound for a Hilbert polynomial on quaternionic Kähler manifolds",
+      "publication": "Journal of Geometric Analysis 14 (2004), 151–170",
+      "url": "https://arxiv.org/abs/math/0208079v1",
+      "version": "Section 2, pp. 2–3 of arXiv:math/0208079v1; equation (2.2). Journal DOI 10.1007/BF02921870."
+    },
+    "ballmann": {
+      "authors": "W. Ballmann",
+      "title": "Lectures on Kähler Manifolds",
+      "publication": "EMS / ESI Lectures in Mathematics and Physics (2006); DOI 10.4171/025",
+      "url": "https://people.maths.ox.ac.uk/~joyce/Nairobi2019/BallmannKahlerManifolds.pdf",
+      "version": "Locators use the accessible author copy: §5.4, Theorem 6.12, Corollary 7.3, and the paragraph after Examples 7.4."
+    },
+    "wolf": {
+      "authors": "J. A. Wolf",
+      "title": "Complex homogeneous contact manifolds and quaternionic symmetric spaces",
+      "publication": "Journal of Mathematics and Mechanics 14 (1965), 1033–1047",
+      "url": "https://math.berkeley.edu/~jawolf/publications.pdf/paper_024.pdf",
+      "version": "Theorems 5.4 and 6.1, pp. 1043–1045."
+    },
+    "lebrun": {
+      "authors": "C. LeBrun",
+      "title": "Fano manifolds, contact structures, and quaternionic geometry",
+      "publication": "International Journal of Mathematics 6 (1995), 419–437",
+      "url": "https://www.math.stonybrook.edu/~claude/fcq.pdf",
+      "version": "Author PDF: §2, pp. 9–10; Corollary 3.4, p. 18."
+    },
+    "derdzinski": {
+      "authors": "A. Derdzinski",
+      "title": "Einstein Metrics in Dimension Four",
+      "publication": "Handbook of Differential Geometry I (2000), 419–707",
+      "url": "https://people.math.osu.edu/derdzinski.1/courses/7711/em.pdf",
+      "version": "Theorem 33.4(a), author p. 186; curvature conventions (4.23), (4.34). Locators are for the author manuscript, not final Handbook pagination."
+    },
+    "amann": {
+      "authors": "M. Amann",
+      "title": "Partial Classification Results for Positive Quaternion Kähler Manifolds",
+      "publication": "International Journal of Mathematics 23 (2012), 1250038",
+      "url": "https://arxiv.org/abs/0911.4587v1",
+      "version": "Theorem 1.2, p. 6 of version 1 (24 November 2009). This preprint is the source used; final journal text has not been directly compared. DOI 10.1142/S0129167X12500383."
+    },
+    "serre": {
+      "authors": "J.-P. Serre",
+      "title": "Géométrie algébrique et géométrie analytique",
+      "publication": "Annales de l’Institut Fourier 6 (1956), 1–42",
+      "url": "https://aif.centre-mersenne.org/item/10.5802/aif.59.pdf",
+      "version": "§12, Theorems 1–3; §19, Propositions 13 and 15; §20, Proposition 18."
+    },
+    "brion": {
+      "authors": "M. Brion",
+      "title": "On automorphism groups of some almost homogeneous varieties",
+      "publication": "Facets of Algebraic Geometry I (2022), 54–76",
+      "url": "https://www-fourier.univ-grenoble-alpes.fr/~mbrion/auts_final.pdf",
+      "version": "§2 and Lemma 2.3; DOI 10.1017/9781108877831.003."
+    },
+    "conrad": {
+      "authors": "B. Conrad",
+      "title": "Reductive group schemes",
+      "publication": "Panoramas et Synthèses 42–43 (2014), 93–444",
+      "url": "https://math.stanford.edu/~conrad/papers/luminysga3.pdf",
+      "version": "Appendix D: Proposition D.2.1, p. 366; D.2.4, p. 368; D.3.2, p. 373."
+    },
+    "kobayashi": {
+      "authors": "S. Kobayashi",
+      "title": "Transformation Groups in Differential Geometry",
+      "publication": "Springer, Ergebnisse 70 (1972)",
+      "url": "https://doi.org/10.1007/978-3-642-61981-6",
+      "version": "Chapter III, §1, Theorem 1.1, p. 77: the full holomorphic automorphism group with its compact-open topology."
+    },
+    "matsushima": {
+      "authors": "Y. Matsushima",
+      "title": "Sur la structure du groupe d’homéomorphismes analytiques d’une certaine variété kählérienne",
+      "publication": "Nagoya Mathematical Journal 11 (1957), 145–150",
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F20E65B911CEB0FEFB4691A71969F6F0/S0027763000002026a.pdf/sur_la_structure_du_groupe_dhomeomorphismes_analytiques_dune_certaine_variete_kaehlerinne.pdf",
+      "version": "§1, Theorem 1, pp. 145–146."
+    },
+    "salamon": {
+      "authors": "S. Salamon",
+      "title": "Quaternionic Kähler manifolds",
+      "publication": "Inventiones Mathematicae 67 (1982), 143–171",
+      "url": "https://doi.org/10.1007/BF01393378",
+      "version": "Theorem 6.1: the positive quaternionic-Kähler twistor construction."
+    }
+  },
+  "entries": {
+    "orswRecognition": {
+      "title": "Recognition from isolated extremal fixed points",
+      "statement": "For a contact Fano manifold with Pic(X) = ℤ[L], a reductive connected contact automorphism group of rank at least two, and isolated extremal components for a maximal torus, ORSW identify (X,L) with an adjoint homogeneous variety.",
+      "encoding": "The contract uses the actual analytic contact automorphism group, a compact real form, an inclusion-maximal compact torus, and the derivative-induced lift on the original contact line. Its conclusion is transitivity. The analytic-to-algebraic passage, algebraization of the action, and comparison of maximal tori remain part of the external corollary.",
+      "references": [
+        "orsw",
+        "serre",
+        "brion",
+        "conrad"
+      ],
+      "locator": "ORSW Theorem 5.1, p. 18; supporting comparison results listed below.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "bwwRestriction": {
+      "title": "Restriction to extremal fixed components",
+      "statement": "BWW give surjectivity of restriction of sections to an extremal fixed component; their small-dimensional result supplies at least two sections on a positive-dimensional component of dimension at most three.",
+      "encoding": "The supplied analytic line is ample and generates the full Picard group. The same faithful holomorphic torus action, integral fiber character, and literal connected fixed component appear on both sides. Projectivity, GAGA, and algebraization of this particular line lift are external steps. No global generation hypothesis is inserted.",
+      "references": [
+        "bww",
+        "wells",
+        "serre",
+        "brion",
+        "conrad"
+      ],
+      "locator": "BWW v3, Lemmas 3.2, 3.4, 3.6, 3.7, pp. 23–26.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "bwwReductive": {
+      "title": "The full twistor automorphism group",
+      "statement": "A positive quaternionic-Kähler twistor has a reductive holomorphic automorphism group. Its Kähler–Einstein metric supplies the Matsushima argument, while the full holomorphic automorphism group carries the usual complex Lie transformation-group structure.",
+      "encoding": "This combined contract provides a finite-dimensional complex Lie structure on the actual full automorphism group, with its specified topology, smooth joint evaluation, and the encoded reductivity condition. These transformation-group properties are part of the input, not inferred merely from a Lie-algebra dimension.",
+      "references": [
+        "bww",
+        "salamon",
+        "matsushima",
+        "kobayashi"
+      ],
+      "locator": "BWW v3, Theorem 6.6, p. 59; Salamon 6.1; Matsushima §1, Theorem 1; Kobayashi III §1, Theorem 1.1.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "unique": {
+      "title": "Uniqueness of the contact distribution",
+      "statement": "In the Picard-generator case of BKK’s contact Fano trichotomy, the contact distribution is unique.",
+      "encoding": "Pulling the contact distribution back by any actual holomorphic automorphism therefore leaves its kernel unchanged. The contract states this preservation for every automorphism. Projectivity and the analytic/algebraic comparison belong to the external derivation.",
+      "references": [
+        "bkk",
+        "serre"
+      ],
+      "locator": "BKK Proposition 2.3, p. 1864; GAGA comparison.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "ntComplexification": {
+      "title": "Infinitesimal contact complexification",
+      "statement": "On a positive quaternionic-Kähler twistor, the holomorphic contact Lie algebra is the complexification of the quaternionic isometry Lie algebra.",
+      "encoding": "The Lean statement specifies the actual natural lift of quaternionic isometries and its orbit differential. It requests a complex-linear bijection, with the differential compatibility needed by the development. The Lie-group and fixed-topology comparisons are included in the external statement.",
+      "references": [
+        "nt",
+        "lee",
+        "kobayashi"
+      ],
+      "locator": "Nitta–Takeuchi Theorems 3.1, 3.2 and Corollaries 2–4, pp. 152–160.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "isometryLie": {
+      "title": "The Riemannian isometry group is a Lie group",
+      "statement": "The isometry group of a connected Riemannian manifold has its natural Lie-group structure and acts smoothly.",
+      "encoding": "The specialization here is to the actual distance obtained from the supplied compact Riemannian geometry, on its existing compact-open topology. The conclusion includes smooth joint evaluation. This does not assert that every metric isometry preserves the quaternionic structure.",
+      "references": [
+        "petersen"
+      ],
+      "locator": "Petersen, Theorem 5.6.19, author pp. 168–172.",
+      "relation": "Specialization of a literature theorem",
+      "note": ""
+    },
+    "closedEmbedding": {
+      "title": "Closed subgroups inherit Lie structure",
+      "statement": "A closed subgroup of a finite-dimensional Lie group is an embedded Lie subgroup.",
+      "encoding": "For a continuous group homomorphism that is a closed embedding into the given real Lie group, the contract supplies a finite-dimensional real model, compatible manifold structure, Lie-group structure, and smooth embedding of the original topological group.",
+      "references": [
+        "lee"
+      ],
+      "locator": "Lee, Theorem 20.12, pp. 523–525.",
+      "relation": "Reformulation of a literature theorem",
+      "note": ""
+    },
+    "orbital": {
+      "title": "The compact symplectic orbital integral",
+      "statement": "For the interleaved anti-Hermitian diagonal matrices X and Y, the normalized Haar integral of exp(tr(X g Y† g†)/2) equals cₙᵒᵈᵈ det[2 sinh(xᵢyⱼ)] / (Δᵒᵈᵈ(x) Δᵒᵈᵈ(y)).",
+      "encoding": "The source is used for positive parameters and nonzero Vandermonde denominator. The code fixes the stabilizer of the interleaved symplectic matrix, normalized Haar probability, trace, determinant and constant. Their definitions are expandable below; passage to grouped coordinates is proved internally.",
+      "references": [
+        "filz"
+      ],
+      "locator": "Forrester–Ipsen–Liu–Zhang, equations (1.5), (1.6), (1.8).",
+      "relation": "Literal specialized formula",
+      "note": ""
+    },
+    "positiveContact": {
+      "title": "Positive contact geometry on the twistor",
+      "statement": "The twistor of a positive quaternionic-Kähler manifold of quaternionic dimension at least two carries its natural complex contact geometry and the associated positive-Ricci structure.",
+      "encoding": "The contract constructs a compatible complex atlas and nondegenerate holomorphic contact data on the actual sphere bundle, with the specified positive Ricci data. The original metric may have any positive scalar normalization; the chosen atlas must match the already defined almost-complex tensor.",
+      "references": [
+        "nt"
+      ],
+      "locator": "Nitta–Takeuchi §2, pp. 149–151, equations (2.9)–(2.10).",
+      "relation": "Geometric construction from the literature",
+      "note": ""
+    },
+    "kodaira": {
+      "title": "A positive line is ample",
+      "statement": "A positive Hermitian holomorphic line bundle on a compact complex manifold has a sufficiently high tensor power whose holomorphic sections give a projective embedding.",
+      "encoding": "Positivity is the explicit Chern-curvature test for a smooth Hermitian metric. AmpleCore refers to finite families of sections of powers of that same line and the resulting genuine projective embedding.",
+      "references": [
+        "wells"
+      ],
+      "locator": "Wells VI §4, Theorem 4.1 and proof, pp. 234–240.",
+      "relation": "Reformulation of Kodaira embedding",
+      "note": ""
+    },
+    "picardAlternative": {
+      "title": "Picard generator or contact homogeneity",
+      "statement": "BKK’s trichotomy leaves a Picard-generator case, projective space with its standard contact line, or a projectivized cotangent bundle of projective space.",
+      "encoding": "The two exceptional spaces are contact homogeneous. Combining this with the trichotomy and GAGA gives the encoded alternative: the original contact line generates the Picard group, or its actual contact automorphism group acts transitively.",
+      "references": [
+        "bkk",
+        "lebrun",
+        "serre"
+      ],
+      "locator": "BKK Proposition 2.3; LeBrun §2, Examples 2.1–2.2 and Proposition 2.3.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "swEquation": {
+      "title": "The twistor Euler characteristic as an index",
+      "statement": "For nonnegative r, the twistor Euler characteristic χ(Z,Lʳ) is ⟨Â(M) ch(Symⁿ⁺²ʳ H), [M]⟩.",
+      "encoding": "The equality is between genuine sheaf cohomology and the development’s explicit Chern–Weil characteristic expression. The quaternionic class uses p₁(Q)/4 with representative −tr(FQ²)/(32π²), and integration uses the quaternionic orientation. Negative twists and later numerical bounds are not additional source assertions.",
+      "references": [
+        "sw"
+      ],
+      "locator": "Semmelmann–Weingart §2, equation (2.2), author p. 3.",
+      "relation": "Index identity in the chosen normalization",
+      "note": ""
+    },
+    "swCohomology": {
+      "title": "Cohomology of powers of the contact line",
+      "statement": "The twistor line has finite-dimensional cohomology, the Kodaira vanishing ranges and Serre duality; its holomorphic sections in degree one identify with complexified Killing fields.",
+      "encoding": "The contract displays all ranges: higher cohomology vanishes for r ≥ 0, degrees at most 2n vanish for r < 0, and duality relates (r,s) to (−r−n−1,2n+1−s). The canonical-line isomorphism is a prerequisite. Hilbert values are derived later.",
+      "references": [
+        "sw"
+      ],
+      "locator": "Semmelmann–Weingart §2, pp. 2–3, the discussion surrounding equations (2.1)–(2.2).",
+      "relation": "Combined cohomological input",
+      "note": ""
+    },
+    "ballmann": {
+      "title": "Positive anticanonical curvature gives simple connectedness",
+      "statement": "A compact connected complex manifold with positive anticanonical bundle is simply connected: the positive first-Chern class yields a positive-Ricci Kähler metric, and Kobayashi’s theorem applies.",
+      "encoding": "The line is the determinant of the actual holomorphic tangent bundle. The auxiliary Kähler metric need not equal the supplied Hermitian metric. The external chain includes the Chern-form interpretation and the Calabi–Yau consequence used by Ballmann.",
+      "references": [
+        "ballmann"
+      ],
+      "locator": "§5.4 (5.59), p. 78; Theorem 6.12, p. 85; Corollary 7.3 and following discussion, pp. 88–89.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "wolfLeBrun": {
+      "title": "Homogeneous twistor implies metric symmetry",
+      "statement": "Homogeneous contact geometry identifies the relevant twistor with that of a quaternionic symmetric space; the twistor determines the normalized positive quaternionic-Kähler metric.",
+      "encoding": "The combined corollary returns intrinsic symmetry of the given metric from a simply connected genuine twistor and transitivity of its actual contact automorphism group. Identification of the metric up to positive scale and preservation of point symmetries under scaling are part of the correspondence being assumed.",
+      "references": [
+        "wolf",
+        "lebrun"
+      ],
+      "locator": "Wolf Theorems 5.4 and 6.1; LeBrun §2 and Corollary 3.4.",
+      "relation": "Derived literature corollary",
+      "note": ""
+    },
+    "derdzinski": {
+      "title": "The four-dimensional positive Einstein case",
+      "statement": "A compact oriented positive Einstein four-manifold with the specified vanishing Weyl half is isometric, up to scale, to the standard sphere or complex projective plane.",
+      "encoding": "The contract packages the resulting global point symmetries, with the source’s orientation and curvature conventions translated to the actual metric. The development separately imposes the dimension-four Einstein/Weyl convention. This is an additional premise of both metric endpoints, outside the 15-field Sources record.",
+      "references": [
+        "derdzinski"
+      ],
+      "locator": "Derdzinski Theorem 33.4(a), author p. 186; conventions (4.23), (4.34).",
+      "relation": "Separate four-dimensional corollary",
+      "note": ""
+    },
+    "amann": {
+      "title": "The additional intersection sign for E14",
+      "statement": "Amann gives positivity of the signed pairing Q(x,y) = (−1)ʳᐟ² ∫ x ∧ y ∧ uⁿ⁻ʳᐟ² on even-degree cohomology, for the canonical quaternionic class u.",
+      "encoding": "Only a weaker, nonnegative square statement for some positive multiple of the actual Kraines class is requested. The positive-ray identification uses Semmelmann–Weingart; scaling to the analytic quarter class is proved internally. This premise is separate from Sources and occurs only in the E14 endpoints.",
+      "references": [
+        "amann",
+        "sw"
+      ],
+      "locator": "Amann v1, Theorem 1.2, p. 6; Semmelmann–Weingart §2, the Kraines-form normalization.",
+      "relation": "Separate E14 input",
+      "note": "The preprint version is explicit. The final journal text has not been directly compared; the Lean proof checks the implication from the displayed contract, not its fidelity to the paper."
+    },
+    "c12": {
+      "title": "Metric symmetry through quaternionic dimension 12",
+      "statement": "For 1 ≤ n ≤ 12, every geometry satisfying the displayed compact connected positive quaternionic-Kähler encoding has a global point symmetry at every point of its given metric, conditional on Sources and the four-dimensional source.",
+      "encoding": "The endpoint is IsRiemannianSymmetric: a metric-preserving global diffeomorphism fixing each chosen point with derivative −id. In dimension four the input explicitly includes the Einstein/Weyl condition. Simple connectedness is not an input assumption.",
+      "references": [],
+      "locator": "Stage2IntrinsicClassification.intrinsicSymmetric_c12",
+      "relation": "Kernel-checked conditional theorem",
+      "note": ""
+    },
+    "e14": {
+      "title": "Metric symmetry through quaternionic dimension 14",
+      "statement": "The same metric-symmetry conclusion holds for 1 ≤ n ≤ 14, with the additional AmannInput premise.",
+      "encoding": "This is real dimension at most 56. The 15 shared contracts and four-dimensional source remain visible as arguments; AmannInput is the extra literature premise for this endpoint.",
+      "references": [],
+      "locator": "Stage2IntrinsicClassification.intrinsicSymmetric_e14",
+      "relation": "Kernel-checked conditional theorem",
+      "note": ""
+    },
+    "contact_c12": {
+      "title": "Generation of the original contact line through dimension 12",
+      "statement": "For 2 ≤ n ≤ 12, Sources imply existence of a compatible twistor complex atlas and nondegenerate contact data whose original contact line is both globally generated and ample.",
+      "encoding": "The conclusion concerns the original, unpowered line. The statement takes the shared Sources record; it has no separate four-dimensional hypothesis. Its displayed type, rather than a proof dependency minimization, determines the premises shown here.",
+      "references": [],
+      "locator": "Stage2IntrinsicClassification.exists_generated_ample_contact_c12",
+      "relation": "Kernel-checked conditional theorem",
+      "note": ""
+    },
+    "contact_e14": {
+      "title": "Generation of the original contact line through dimension 14",
+      "statement": "For 2 ≤ n ≤ 14, Sources and AmannInput imply existence of a compatible twistor complex atlas and nondegenerate contact data whose original contact line is both globally generated and ample.",
+      "encoding": "The conclusion concerns the original, unpowered line. The statement takes the shared Sources record; it has no separate four-dimensional hypothesis. Its displayed type, rather than a proof dependency minimization, determines the premises shown here.",
+      "references": [],
+      "locator": "Stage2IntrinsicClassification.exists_generated_ample_contact_e14",
+      "relation": "Kernel-checked conditional theorem",
+      "note": ""
+    },
+    "sources": {
+      "title": "The shared literature record",
+      "statement": "Sources is a conjunction of the fifteen named propositions shown in the Literature view. Constructing a value requires supplying all fifteen proofs.",
+      "encoding": "A definition of a proposition does not prove it. The final theorems accept this record as an argument. Methods named Sources.quaternionicSubmanifold, Sources.ntHamiltonian and other retired interfaces are now theorems, not additional fields.",
+      "references": [],
+      "locator": "Stage2IntrinsicSources.Sources",
+      "relation": "Boundary definition",
+      "note": ""
+    }
+  },
+  "definitions": {
+    "QuaternionicSymmetry.Stage2IntrinsicGeometry.CompactConnectedPositiveTwistorGeometry": {
+      "title": "The geometric input, including dimension four",
+      "statement": "A compact connected positive quaternionic-Kähler geometry of real dimension 4n, with n ≥ 1. When n = 1, the record additionally requires the specified Einstein Ricci identity and the Weyl condition. These are geometric hypotheses of the target.",
+      "references": [
+        "nt",
+        "derdzinski"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.ManifoldPositiveQuaternionicKahlerGeometry.CompactConnectedPositiveQuaternionicKahlerGeometry": {
+      "title": "Compact positive quaternionic-Kähler geometry",
+      "statement": "An actual smooth quaternionic Hermitian tangent reduction with its compatible torsion-free metric connection and positive scalar curvature, together with compactness and connectedness of the base. Expand the inherited records to inspect the metric, reduction and connection.",
+      "references": [
+        "nt",
+        "sw"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.ManifoldRiemannianIntrinsicSymmetry.IsRiemannianSymmetric": {
+      "title": "Intrinsic symmetry of the given metric",
+      "statement": "For every point x there exists a global smooth metric isometry fixing x, whose derivative at x is minus the identity. This is the conclusion of the metric endpoints.",
+      "references": [
+        "wolf",
+        "lebrun",
+        "derdzinski"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.ManifoldRiemannianIntrinsicSymmetry.PointSymmetry": {
+      "title": "A global point symmetry",
+      "statement": "A smooth diffeomorphism of the original manifold, preserving its actual metric, fixing the selected point, and with tangent derivative −id at that point.",
+      "references": [
+        "wolf",
+        "lebrun",
+        "derdzinski"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.ManifoldTwistorLeBrunComplexAtlas.CompatibleComplexAtlas": {
+      "title": "Compatibility of the complex twistor atlas",
+      "statement": "Complex charts on the actual sphere bundle, smoothly compatible in both directions with its real atlas, and inducing the almost-complex endomorphism already constructed from the quaternionic geometry.",
+      "references": [
+        "nt"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.ManifoldTwistorLeBrunComplexAtlas.NondegenerateHolomorphicContactData": {
+      "title": "Nondegenerate holomorphic contact data",
+      "statement": "Holomorphic contact data for the chosen compatible atlas, with the nondegeneracy condition on the contact bracket. The line is the constructed quotient line of the actual twistor.",
+      "references": [
+        "nt",
+        "lebrun"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.GeneralComplexContactData.ContactGeometry": {
+      "title": "Complex contact geometry",
+      "statement": "A holomorphic line-valued one-form on a complex manifold of dimension 2n+1, surjective at each point, whose kernel has nondegenerate line-valued Levi bracket.",
+      "references": [
+        "lebrun",
+        "bkk"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.HolomorphicLineCoreClasses.LineCore": {
+      "title": "A represented holomorphic line bundle",
+      "statement": "A complex line bundle presented by a holomorphic bundle core over an open cover. The cover may have any index type in the selected universe; the later class construction identifies isomorphic presentations.",
+      "references": [
+        "wells",
+        "serre"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.HolomorphicLineCoreClasses.CoreClass": {
+      "title": "Holomorphic line-bundle classes",
+      "statement": "The quotient of represented holomorphic line bundles by holomorphic isomorphism across covers. Tensor product and dualization supply the Picard-group operations used in the source predicates.",
+      "references": [
+        "serre",
+        "bkk"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.HolomorphicLineCoreAmpleFiniteMap.AmpleCore": {
+      "title": "Ampleness of this line",
+      "statement": "Some positive tensor power of this particular holomorphic line admits the specified projective embedding by holomorphic sections. Its full definition reduces to VeryAmpleCore and the actual projective evaluation map.",
+      "references": [
+        "wells"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.HolomorphicLineCorePullback.GloballyGenerated": {
+      "title": "Global generation",
+      "statement": "At each point there is a global holomorphic section of the line with nonzero value there. Since the fiber is one-dimensional, those section values span the fiber.",
+      "references": [
+        "wells",
+        "bww"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.HolomorphicLineHermitianMetric.HermitianLineMetric.PositiveChernCurvature": {
+      "title": "Positive Chern curvature",
+      "statement": "In a holomorphic local frame, write the squared norm as h and the potential as −log h. The sum of its real Hessian on v and iv is positive for every nonzero complex tangent vector v. A positive constant factor is omitted from this sign test.",
+      "references": [
+        "wells",
+        "ballmann"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.GeneralContactFanoORSWSource.IsCompactRealForm": {
+      "title": "A compact real form of the actual group",
+      "statement": "A specified homomorphism from a compact real Lie group into the complex automorphism group, with the differential and complexification properties written in the definition. This connects the actual compact action to the complex group used for recognition.",
+      "references": [
+        "conrad",
+        "orsw"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.GeneralPositiveAnticanonicalSimplyConnectedSource.anticanonicalLineCore": {
+      "title": "The anticanonical line",
+      "statement": "The determinant line of the actual holomorphic tangent bundle of the complex manifold. The positivity premise for simple connectedness concerns this specific line.",
+      "references": [
+        "ballmann"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.ManifoldTwistorLineCoreClasses.contactLineCore": {
+      "title": "The original contact line",
+      "statement": "The actual twistor contact quotient line, represented as a holomorphic line core on the chosen compatible complex atlas. Global generation and ampleness in the endpoints refer to this same line.",
+      "references": [
+        "nt",
+        "lebrun"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    },
+    "QuaternionicSymmetry.ManifoldHodgeSquareApplication.GeneralizedSquareNonnegative": {
+      "title": "The generalized square inequality",
+      "statement": "The nonnegative degree-4m part of the intersection-square condition on the constructed real de Rham algebra with its canonical integration. The Amann contract supplies it along a positive ray of the fundamental class.",
+      "references": [
+        "amann"
+      ],
+      "relation": "Project encoding",
+      "encoding": "This is a definition used to state the targets or their premises. It introduces mathematical data or a predicate; it is not an additional literature assumption.",
+      "locator": "See the displayed definition and its dependencies."
+    }
+  }
+}

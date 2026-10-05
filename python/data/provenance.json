@@ -1,0 +1,31 @@
+{
+  "manuscript_snapshot": {
+    "description": "Identities transcribed for the 3 October 2026 manuscript review; the manuscript is not needed to run the checks.",
+    "sha256": "1375cab11854261d49e972be19f9ff458cbc6e1575e6aa6b019e47b6b1af90be",
+    "automatic_latex_comparison": false
+  },
+  "origins": {
+    "verify.py": "Textbooks/tools/verify.py",
+    "verify_h2.py": "Textbooks/tools/verify_h2.py",
+    "check_printed_identities.py": "paper_review_20261003/check_printed_identities.py",
+    "adjacent_density.py": "paper_review_20261003/adjacent_density.py",
+    "orbital_polynomials.py": "paper_review_20261003/verify_uniform_sp14.py",
+    "data/h2_witness_n13.json": "Textbooks/data/h2_witness_n13.json",
+    "data/h2_witness_n14.json": "Textbooks/data/h2_witness_n14.json",
+    "verify_decompositions.py": "decompositions_5_14/verify_decompositions.py",
+    "check_examples.py": "decompositions_5_14/check_examples.py",
+    "data/decompositions_certificate.json": "decompositions_5_14/certificate.json"
+  },
+  "adaptations": "Standalone paths and command-line/report handling. Rational polynomial algorithms and certificate coefficients are preserved.",
+  "current_paper_supplement": {
+    "overleaf_revision": "5e5c1d72532ffce1627b35f5b8c2a2935f2b5a26",
+    "manuscript_sha256": "375783ba7004110d034246eb18ec15f8104c8b80137f9376ce5923f120c3f76e",
+    "description": "Current paper decomposition certificate and worked examples, recovered from Overleaf on 5 October 2026.",
+    "original_files_sha256": {
+      "verify_decompositions.py": "b879a1e120db5f015896df2179164e56e476f1308c7e0b377bddba93d220068e",
+      "check_examples.py": "6fabe4c1d4feffd0c6e800d33fee178f06bbb5e6fa25834c2cf474d7a8219843",
+      "certificate.json": "1acff9de8b78975f9bf71def6b4e4bd6bc41dc5fd0299e89235aa41605b692ab"
+    },
+    "automatic_latex_comparison": false
+  }
+}

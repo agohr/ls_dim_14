@@ -1,0 +1,462 @@
+{
+  "rank": 14,
+  "eta": {
+    "outside": 192,
+    "ratio": 1,
+    "profile_index": 0
+  },
+  "profiles": [
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      4
+    ],
+    [
+      1,
+      4,
+      4,
+      4
+    ],
+    [
+      1,
+      16,
+      16,
+      16
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    [
+      1,
+      16,
+      16,
+      16,
+      16
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      4,
+      4,
+      16
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4,
+      16,
+      16
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      16,
+      16
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4,
+      16
+    ]
+  ],
+  "groups": [
+    {
+      "k": 1,
+      "dimensions": [
+        4,
+        6,
+        8,
+        10,
+        12,
+        14
+      ],
+      "support": [
+        0
+      ],
+      "minimum_normalized_weight": "1"
+    },
+    {
+      "k": 2,
+      "dimensions": [
+        6,
+        8,
+        10,
+        12,
+        14
+      ],
+      "support": [
+        0,
+        6
+      ],
+      "minimum_normalized_weight": "120517237471/3229027149348"
+    },
+    {
+      "k": 3,
+      "dimensions": [
+        8,
+        10,
+        12,
+        14
+      ],
+      "support": [
+        6,
+        7,
+        10
+      ],
+      "minimum_normalized_weight": "228232230305947074191/2355337518412529322672"
+    },
+    {
+      "k": 4,
+      "dimensions": [
+        10,
+        12
+      ],
+      "support": [
+        2,
+        5,
+        7,
+        10,
+        11
+      ],
+      "minimum_normalized_weight": "2683583619066664192513/450720479501003906194000"
+    },
+    {
+      "k": 4,
+      "dimensions": [
+        14
+      ],
+      "support": [
+        3,
+        6,
+        9,
+        10,
+        11
+      ],
+      "minimum_normalized_weight": "2302118555772543926253584952186629/981604602011948683525660336264191360"
+    },
+    {
+      "k": 5,
+      "dimensions": [
+        12,
+        14
+      ],
+      "support": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8,
+        11
+      ],
+      "minimum_normalized_weight": "173015125417037438403463784241512017/722988770639536679991385029069682569600"
+    },
+    {
+      "k": 6,
+      "dimensions": [
+        14
+      ],
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "minimum_normalized_weight": "746195595210835384379198076893293851671270558189/60798485913304297862426140344160171134816997760055000"
+    }
+  ],
+  "rows": [
+    {
+      "n": 4,
+      "k": 1,
+      "support": [
+        0
+      ],
+      "minimum_normalized_weight": "1",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "support": [
+        0
+      ],
+      "minimum_normalized_weight": "1",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 6,
+      "k": 2,
+      "support": [
+        0,
+        6
+      ],
+      "minimum_normalized_weight": "532321/2792790",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 8,
+      "k": 1,
+      "support": [
+        0
+      ],
+      "minimum_normalized_weight": "1",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 8,
+      "k": 2,
+      "support": [
+        0,
+        6
+      ],
+      "minimum_normalized_weight": "184561537/1384106724",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 8,
+      "k": 3,
+      "support": [
+        6,
+        7,
+        10
+      ],
+      "minimum_normalized_weight": "2418798022836583/13785672496115520",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 10,
+      "k": 1,
+      "support": [
+        0
+      ],
+      "minimum_normalized_weight": "1",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 10,
+      "k": 2,
+      "support": [
+        0,
+        6
+      ],
+      "minimum_normalized_weight": "11480287/138777111",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 10,
+      "k": 3,
+      "support": [
+        6,
+        7,
+        10
+      ],
+      "minimum_normalized_weight": "219416654155469783/909854384743624320",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 10,
+      "k": 4,
+      "support": [
+        2,
+        5,
+        7,
+        10,
+        11
+      ],
+      "minimum_normalized_weight": "3308506509158997114710843/110273181686859449971440000",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 12,
+      "k": 1,
+      "support": [
+        0
+      ],
+      "minimum_normalized_weight": "1",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 12,
+      "k": 2,
+      "support": [
+        0,
+        6
+      ],
+      "minimum_normalized_weight": "120517237471/3229027149348",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 12,
+      "k": 3,
+      "support": [
+        6,
+        7,
+        10
+      ],
+      "minimum_normalized_weight": "4062927683797446935/19929060505830885552",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 12,
+      "k": 4,
+      "support": [
+        2,
+        5,
+        7,
+        10,
+        11
+      ],
+      "minimum_normalized_weight": "2683583619066664192513/450720479501003906194000",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 12,
+      "k": 5,
+      "support": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8,
+        11
+      ],
+      "minimum_normalized_weight": "715708251121956174735128291551/92125829609107305958249025090940",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 14,
+      "k": 1,
+      "support": [
+        0
+      ],
+      "minimum_normalized_weight": "1",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 14,
+      "k": 2,
+      "support": [
+        0,
+        6
+      ],
+      "minimum_normalized_weight": "456827826528305/3328317159625458",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 14,
+      "k": 3,
+      "support": [
+        6,
+        7,
+        10
+      ],
+      "minimum_normalized_weight": "228232230305947074191/2355337518412529322672",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 14,
+      "k": 4,
+      "support": [
+        3,
+        6,
+        9,
+        10,
+        11
+      ],
+      "minimum_normalized_weight": "2302118555772543926253584952186629/981604602011948683525660336264191360",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 14,
+      "k": 5,
+      "support": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8,
+        11
+      ],
+      "minimum_normalized_weight": "173015125417037438403463784241512017/722988770639536679991385029069682569600",
+      "strict_lower_bound": "1/131072"
+    },
+    {
+      "n": 14,
+      "k": 6,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "minimum_normalized_weight": "746195595210835384379198076893293851671270558189/60798485913304297862426140344160171134816997760055000",
+      "strict_lower_bound": "1/131072"
+    }
+  ],
+  "definition": "lambda is the unique rational solution of the p1^k-normalized orbital moment system; all weights exceed the common stated dyadic lower bound"
+}

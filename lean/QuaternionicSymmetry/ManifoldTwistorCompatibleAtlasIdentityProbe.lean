@@ -1,0 +1,5 @@
+import QuaternionicSymmetry.ManifoldTwistorHolomorphicMapCriterion
+
+#check @ContMDiff
+#check @QuaternionicSymmetry.ManifoldTwistorHolomorphicMapCriterion.contMDiff_complex_of_twistor_tensor
+#check @ContMDiff.comp

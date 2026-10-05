@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lean code comparison and search</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="page-header"><a href="../index.html">← Repository overview</a></header>
+<main id="main" class="explorer-main">
+<h1>Lean code comparison and search</h1>
+<p>Compare the exact Lean source and elaborated types with mathematical explanations. Follow the linked definitions or search the bundled statements.</p>
+<p class="small">The 15 literature inputs and two separate premises are assumptions of conditional theorems. Mathematical explanations are editorial paraphrases. The graph follows statement encodings, not theorem proof bodies.</p>
+<div class="explorer-layout">
+<aside class="explorer-sidebar" aria-label="Explorer controls">
+<div class="view-buttons" role="group" aria-label="Declaration category"><button data-view="literature" aria-pressed="true">Literature inputs <span>15 + 2</span></button><button data-view="targets" aria-pressed="false">Target theorems <span>4</span></button><button data-view="definitions" aria-pressed="false">Encoding definitions <span>570</span></button><button data-view="all" aria-pressed="false">All declarations</button></div>
+<label for="search">Search code, statements, citations</label><input id="search" type="search" placeholder="e.g. contact line, Amann" autocomplete="off">
+<label for="root-filter">Relevant to</label><select id="root-filter"><option value="">Every target and input</option></select>
+<label class="checkbox"><input type="checkbox" id="show-generated">Include compiler helpers</label><button id="reset" class="text-button">Reset filters</button>
+</aside>
+<section class="results" aria-label="Declarations"><div class="results-header"><h2 id="view-title">Literature inputs</h2><p id="result-count" role="status" aria-live="polite">17 literature inputs</p></div><div id="declarations"><details class="node" id="orswRecognition"><summary><span class="badge">orswRecognition</span><strong>Recognition from isolated extremal fixed points</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- Reviewed analytic ORSW 5.1 with literal group, line, maximality and
+fixed-component hypotheses. No lower-dimensional classification is assumed. -/
+def AnalyticCompactRealFormExtremalRecognition : Prop :=
+  ∀ {R H Z : Type}
+    [NormedAddCommGroup R] [NormedSpace ℝ R]
+    [TopologicalSpace H] [TopologicalSpace Z] [ChartedSpace H Z]
+    (IR : ModelWithCorners ℝ R H) [IsManifold IR ∞ Z]
+    [CompactSpace Z] [T2Space Z] [SecondCountableTopology Z] [ConnectedSpace Z]
+    (n : ℕ) (_hn : 1 ≤ n)
+    (G : ContactGeometry (IR := IR) (Z := Z) n)
+    (D : Z → Submodule ℂ (ComplexTwistorModel n)),
+    ContactGeometry.IsComplexContactKernel IR G D →
+    letI := G.charts
+    letI := G.complexManifold
+    AmpleCore 𝓘(ℂ,ComplexTwistorModel n) (ContactGeometry.lineCore IR G) →
+    Function.Bijective (fun q : ℤ =&gt;
+      (Quotient.mk _ (ContactGeometry.lineCore IR G) :
+        CoreClass.{0} (B := Z) 𝓘(ℂ,ComplexTwistorModel n)) ^ q) →
+    ∀ {VC : Type} [NormedAddCommGroup VC] [NormedSpace ℂ VC]
+      [FiniteDimensional ℂ VC] [ChartedSpace VC (Automorphisms D)]
+      [IsManifold 𝓘(ℂ,VC) ∞ (Automorphisms D)]
+      [LieGroup 𝓘(ℂ,VC) ∞ (Automorphisms D)],
+      ContMDiff (𝓘(ℂ,VC).prod 𝓘(ℂ,ComplexTwistorModel n))
+        𝓘(ℂ,ComplexTwistorModel n) ∞
+        (fun p : Automorphisms D × Z =&gt; p.1.1 p.2) →
+      ∀ {K VR : Type} [Group K] [TopologicalSpace K] [CompactSpace K]
+        [NormedAddCommGroup VR] [NormedSpace ℝ VR] [FiniteDimensional ℝ VR]
+        [ChartedSpace VR K] [IsManifold 𝓘(ℝ,VR) ∞ K] [LieGroup 𝓘(ℝ,VR) ∞ K]
+        (ι : K →* Automorphisms D),
+        IsCompactRealForm (VR := VR) (VC := VC) ι →
+        ∀ (r : ℕ) (T : TorusEmbedding K r), 2 ≤ r → T.IsMaximal K →
+          ∀ (a : Torus r →* Equiv.Perm Z),
+            (∀ t z, a t z = (ι (T.hom t)).1 z) →
+            ∀ Φ : ∀ t z, G.line.Fiber z ≃ₗ[ℂ] G.line.Fiber (a t z),
+              IsCanonicalContactLift IR G a Φ →
+              HasIsolatedExtremalComponents IR G a Φ →
+              ∀ z w : Z, ∃ f : Automorphisms D, f.1 z = w</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>For a contact Fano manifold with Pic(X) = ℤ[L], a reductive connected contact automorphism group of rank at least two, and isolated extremal components for a maximal torus, ORSW identify (X,L) with an adjoint homogeneous variety.</p><h3>Correspondence with Lean</h3><p>The contract uses the actual analytic contact automorphism group, a compact real form, an inclusion-maximal compact torus, and the derivative-induced lift on the original contact line. Its conclusion is transitivity. The analytic-to-algebraic passage, algebraization of the action, and comparison of maximal tori remain part of the external corollary.</p><p class="locator">ORSW Theorem 5.1, p. 18; supporting comparison results listed below.</p><p><a href="https://link.springer.com/article/10.1007/s00029-021-00621-w">ORSW</a>, <a href="https://aif.centre-mersenne.org/item/10.5802/aif.59.pdf">SERRE</a>, <a href="https://www-fourier.univ-grenoble-alpes.fr/~mbrion/auts_final.pdf">BRION</a>, <a href="https://math.stanford.edu/~conrad/papers/luminysga3.pdf">CONRAD</a></p><p class="small"></p></section></div></details>
+<details class="node" id="bwwRestriction"><summary><span class="badge">bwwRestriction</span><strong>Restriction to extremal fixed components</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- Reviewed universally quantified BWW restriction and small-component
+corollary. No quaternionic hypotheses or section-generation assumption occur.
+Full Picard generation concerns all represented analytic line classes. -/
+def AnalyticExtremalRestrictionAndSmallSections : Prop :=
+  ∀ {X F : Type} [TopologicalSpace X] [T2Space X]
+    [SecondCountableTopology X] [CompactSpace X] [ConnectedSpace X]
+    [NormedAddCommGroup F] [NormedSpace ℂ F] [FiniteDimensional ℂ F]
+    [ChartedSpace F X] [IsManifold 𝓘(ℂ,F) ∞ X]
+    (L : LineCore.{0} (B := X) 𝓘(ℂ,F)) {r : ℕ},
+    0 &lt; r → AmpleCore 𝓘(ℂ,F) L →
+    Function.Bijective (fun m : ℤ =&gt;
+      (Quotient.mk _ L : CoreClass.{0} (B := X) 𝓘(ℂ,F)) ^ m) →
+    ∀ (a : ComplexTorusLineLinearization L (r := r)),
+    Function.Injective a.baseAction →
+    ∀ (x : X) (ν : Fin r → ℤ), HasFiberWeight L a x ν →
+    realWeight ν ∈ (convexHull ℝ (fixedWeights L a)).extremePoints ℝ →
+    ∀ (Y : Set X), Y = connectedComponentIn (fixedSet L a) x →
+    ∀ {b : ℕ}
+      (hChart : ChartedSpace (EuclideanSpace ℂ (Fin b))
+        (↥Y))
+      (hManifold : letI := hChart; IsManifold 𝓘(ℂ,EuclideanSpace ℂ (Fin b)) ∞
+        (↥Y)),
+      letI := hChart
+      ∀ (hIncl : ContMDiff 𝓘(ℂ,EuclideanSpace ℂ (Fin b)) 𝓘(ℂ,F) ∞
+        (Subtype.val : ↥Y → X)),
+    (∀ y, Function.Injective (mfderiv 𝓘(ℝ,EuclideanSpace ℂ (Fin b)) 𝓘(ℝ,F)
+      (Subtype.val : ↥Y → X) y)) →
+    Function.Surjective (restrictionLinear 𝓘(ℂ,F)
+      𝓘(ℂ,EuclideanSpace ℂ (Fin b)) L Subtype.val hIncl) ∧
+    (0 &lt; b → b ≤ 3 → 2 ≤ Module.finrank ℂ
+      (RestrictedGlobalSections 𝓘(ℂ,F) 𝓘(ℂ,EuclideanSpace ℂ (Fin b))
+        L Subtype.val hIncl))</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>BWW give surjectivity of restriction of sections to an extremal fixed component; their small-dimensional result supplies at least two sections on a positive-dimensional component of dimension at most three.</p><h3>Correspondence with Lean</h3><p>The supplied analytic line is ample and generates the full Picard group. The same faithful holomorphic torus action, integral fiber character, and literal connected fixed component appear on both sides. Projectivity, GAGA, and algebraization of this particular line lift are external steps. No global generation hypothesis is inserted.</p><p class="locator">BWW v3, Lemmas 3.2, 3.4, 3.6, 3.7, pp. 23–26.</p><p><a href="https://arxiv.org/abs/1802.05002v3">BWW</a>, <a href="https://doi.org/10.1007/978-0-387-73892-5">WELLS</a>, <a href="https://aif.centre-mersenne.org/item/10.5802/aif.59.pdf">SERRE</a>, <a href="https://www-fourier.univ-grenoble-alpes.fr/~mbrion/auts_final.pdf">BRION</a>, <a href="https://math.stanford.edu/~conrad/papers/luminysga3.pdf">CONRAD</a></p><p class="small"></p></section></div></details>
+<details class="node" id="bwwReductive"><summary><span class="badge">bwwReductive</span><strong>The full twistor automorphism group</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- The genuine positive twistor has a single reductive full-automorphism
+complex Lie transformation atlas. The actual base, not a freely supplied
+complex contact manifold, is the geometric premise. -/
+def FullAutReductiveTransformationSource : Prop :=
+  ∀ {E M : Type}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [Nontrivial E] [FiniteDimensional ℝ E]
+    [TopologicalSpace M] [T2Space M] [SecondCountableTopology M] [Nonempty M]
+    [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    (P : CompactConnectedPositiveQuaternionicKahlerGeometry (E := E) (M := M))
+    (n : ℕ), 2 ≤ n → Module.finrank ℝ E = 4*n →
+    ∀ (A : CompatibleComplexAtlas P.tangent P.connection n),
+      FullAutReductiveTransformationConclusion P.tangent P.connection A</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>A positive quaternionic-Kähler twistor has a reductive holomorphic automorphism group. Its Kähler–Einstein metric supplies the Matsushima argument, while the full holomorphic automorphism group carries the usual complex Lie transformation-group structure.</p><h3>Correspondence with Lean</h3><p>This combined contract provides a finite-dimensional complex Lie structure on the actual full automorphism group, with its specified topology, smooth joint evaluation, and the encoded reductivity condition. These transformation-group properties are part of the input, not inferred merely from a Lie-algebra dimension.</p><p class="locator">BWW v3, Theorem 6.6, p. 59; Salamon 6.1; Matsushima §1, Theorem 1; Kobayashi III §1, Theorem 1.1.</p><p><a href="https://arxiv.org/abs/1802.05002v3">BWW</a>, <a href="https://doi.org/10.1007/BF01393378">SALAMON</a>, <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F20E65B911CEB0FEFB4691A71969F6F0/S0027763000002026a.pdf/sur_la_structure_du_groupe_dhomeomorphismes_analytiques_dune_certaine_variete_kaehlerinne.pdf">MATSUSHIMA</a>, <a href="https://doi.org/10.1007/978-3-642-61981-6">KOBAYASHI</a></p><p class="small"></p></section></div></details>
+<details class="node" id="unique"><summary><span class="badge">unique</span><strong>Uniqueness of the contact distribution</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- Universal derived BKK uniqueness implication, conditional on the same
+genuine complex-contact and ampleness hypotheses as T2-A. It demands an
+actual contact-line power-map bijection before asserting preservation by
+every biholomorphism of the same complex manifold. -/
+def AnalyticContactPicardGeneratorPreservesDistribution : Prop :=
+  ∀ {R H Z : Type}
+    [NormedAddCommGroup R] [NormedSpace ℝ R]
+    [TopologicalSpace H] [TopologicalSpace Z] [ChartedSpace H Z]
+    (IR : ModelWithCorners ℝ R H) [IsManifold IR ∞ Z]
+    [CompactSpace Z] [T2Space Z] [SecondCountableTopology Z]
+    [ConnectedSpace Z]
+    (n : ℕ) (_hn : 1 ≤ n)
+    (G : ContactGeometry (IR := IR) (Z := Z) n)
+    (D : Z → Submodule ℂ (ComplexTwistorModel n)),
+    ContactGeometry.IsComplexContactKernel IR G D →
+    letI := G.charts
+    letI := G.complexManifold
+    AmpleCore 𝓘(ℂ,ComplexTwistorModel n) (ContactGeometry.lineCore IR G) →
+    Function.Bijective (fun r : ℤ =&gt;
+      (Quotient.mk _ (ContactGeometry.lineCore IR G) :
+        CoreClass.{0} (B := Z) 𝓘(ℂ,ComplexTwistorModel n)) ^ r) →
+    AllAutomorphismsPreserve D</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>In the Picard-generator case of BKK’s contact Fano trichotomy, the contact distribution is unique.</p><h3>Correspondence with Lean</h3><p>Pulling the contact distribution back by any actual holomorphic automorphism therefore leaves its kernel unchanged. The contract states this preservation for every automorphism. Projectivity and the analytic/algebraic comparison belong to the external derivation.</p><p class="locator">BKK Proposition 2.3, p. 1864; GAGA comparison.</p><p><a href="https://aif.centre-mersenne.org/item/10.5802/aif.3510.pdf">BKK</a>, <a href="https://aif.centre-mersenne.org/item/10.5802/aif.59.pdf">SERRE</a></p><p class="small"></p></section></div></details>
+<details class="node" id="ntComplexification"><summary><span class="badge">ntComplexification</span><strong>Infinitesimal contact complexification</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- Actual-object derived NT-C contract: contact-field complexification, with
+the exact derivative of the literal isometry contact lift and no bespoke
+Cartan assumption. The contact Lie atlas is the pullback of the SAME
+supplied full-automorphism atlas. -/
+def NTContactInfinitesimalComplexificationSource : Prop :=
+  ∀ {E M VR VC : Type}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [FiniteDimensional ℝ E] [Nontrivial E]
+    [TopologicalSpace M] [T2Space M] [SecondCountableTopology M] [Nonempty M]
+    [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    [NormedAddCommGroup VR] [NormedSpace ℝ VR] [FiniteDimensional ℝ VR]
+    [NormedAddCommGroup VC] [NormedSpace ℂ VC] [FiniteDimensional ℂ VC]
+    (P : CompactConnectedPositiveQuaternionicKahlerGeometry (E := E) (M := M))
+    (n : ℕ), 2 ≤ n → Module.finrank ℝ E = 4*n →
+    ∀ (A : CompatibleComplexAtlas P.tangent P.connection n)
+      (C : NondegenerateHolomorphicContactData P.tangent P.connection n A)
+      (hPreserve : FullPreservesContact
+        P.tangent P.connection A C.contact.line),
+      letI := A.charts
+      letI := A.complexManifold
+      ∀ (hRealChart : ChartedSpace VR
+          (ManifoldQuaternionicSpanSymmetry.QuaternionicIsometries P.tangent))
+        (hRealManifold : letI := hRealChart
+          IsManifold 𝓘(ℝ,VR) ∞
+            (ManifoldQuaternionicSpanSymmetry.QuaternionicIsometries P.tangent))
+        (hRealLie : letI := hRealChart
+          LieGroup 𝓘(ℝ,VR) ∞
+            (ManifoldQuaternionicSpanSymmetry.QuaternionicIsometries P.tangent))
+        (hAutChart : ChartedSpace VC
+          (TwistorHolomorphicAutomorphisms P.tangent P.connection A))
+        (hAutManifold : letI := hAutChart
+          IsManifold 𝓘(ℂ,VC) ∞
+            (TwistorHolomorphicAutomorphisms P.tangent P.connection A))
+        (hAutLie : letI := hAutChart
+          LieGroup 𝓘(ℂ,VC) ∞
+            (TwistorHolomorphicAutomorphisms P.tangent P.connection A)),
+        letI : ChartedSpace VR
+            (ManifoldQuaternionicSpanSymmetry.QuaternionicIsometries P.tangent) :=
+          hRealChart
+        letI : IsManifold 𝓘(ℝ,VR) ∞
+            (ManifoldQuaternionicSpanSymmetry.QuaternionicIsometries P.tangent) :=
+          hRealManifold
+        letI : LieGroup 𝓘(ℝ,VR) ∞
+            (ManifoldQuaternionicSpanSymmetry.QuaternionicIsometries P.tangent) :=
+          hRealLie
+        letI : ChartedSpace VC
+            (TwistorHolomorphicAutomorphisms P.tangent P.connection A) :=
+          hAutChart
+        letI : IsManifold 𝓘(ℂ,VC) ∞
+            (TwistorHolomorphicAutomorphisms P.tangent P.connection A) :=
+          hAutManifold
+        letI : LieGroup 𝓘(ℂ,VC) ∞
+            (TwistorHolomorphicAutomorphisms P.tangent P.connection A) :=
+          hAutLie
+        ∀ (hJoint : ContMDiff
+            (𝓘(ℂ,VC).prod 𝓘(ℂ,ComplexTwistorModel n))
+            𝓘(ℂ,ComplexTwistorModel n) ∞
+            (fun p : TwistorHolomorphicAutomorphisms
+                P.tangent P.connection A × SphereBundleTotal P.tangent =&gt;
+              p.1.1 p.2))
+          (hSmooth :
+            letI := contactCharts (V := VC)
+              P.tangent P.connection A C.contact.line hPreserve
+            ContMDiff 𝓘(ℝ,VR) 𝓘(ℝ,VC) ∞
+              (isometryContactLift P.tangent P.connection A C.contact.line)),
+          letI := contactCharts (V := VC)
+            P.tangent P.connection A C.contact.line hPreserve
+          letI := contactManifold (V := VC)
+            P.tangent P.connection A C.contact.line hPreserve
+          letI := contactLieGroup (V := VC)
+            P.tangent P.connection A C.contact.line hPreserve
+          let f : GroupLieAlgebra 𝓘(ℝ,VR)
+              (ManifoldQuaternionicSpanSymmetry.QuaternionicIsometries P.tangent)
+              →ₗ[ℝ] GroupLieAlgebra 𝓘(ℂ,VC)
+                (ContactAutomorphisms
+                  P.tangent P.connection A C.contact.line) :=
+            (mfderiv 𝓘(ℝ,VR) 𝓘(ℝ,VC)
+              (isometryContactLift
+                P.tangent P.connection A C.contact.line) 1).toLinearMap
+          Function.Bijective (complexifiedMapComplex f)</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>On a positive quaternionic-Kähler twistor, the holomorphic contact Lie algebra is the complexification of the quaternionic isometry Lie algebra.</p><h3>Correspondence with Lean</h3><p>The Lean statement specifies the actual natural lift of quaternionic isometries and its orbit differential. It requests a complex-linear bijection, with the differential compatibility needed by the development. The Lie-group and fixed-topology comparisons are included in the external statement.</p><p class="locator">Nitta–Takeuchi Theorems 3.1, 3.2 and Corollaries 2–4, pp. 152–160.</p><p><a href="https://www.jstage.jst.go.jp/article/jmath1948/39/1/39_1_139/_pdf">NT</a>, <a href="https://doi.org/10.1007/978-1-4419-9982-5">LEE</a>, <a href="https://doi.org/10.1007/978-3-642-61981-6">KOBAYASHI</a></p><p class="small"></p></section></div></details>
+<details class="node" id="isometryLie"><summary><span class="badge">isometryLie</span><strong>The Riemannian isometry group is a Lie group</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- Universal BG-R3 source boundary: Lie group and smooth evaluation on
+the actual compact-open isometry group, for standard compact connected
+finite-dimensional Riemannian manifolds. -/
+def IsometryLieSource : Prop :=
+  ∀ {E : Type uIso} {M : Type vIso}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [FiniteDimensional ℝ E] [Nontrivial E]
+    [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    [CompactSpace M] [T3Space M] [SecondCountableTopology M]
+    [PreconnectedSpace M] [Nonempty M],
+    ∀ Q : ManifoldQuaternionicMetric.SmoothQuaternionicHermitianTangent
+      (I := 𝓘(ℝ,E)) (M := M) (n := ∞),
+      IsometryLieConclusion Q</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Specialization of a literature theorem</p><h3>Mathematical statement · paraphrase</h3><p>The isometry group of a connected Riemannian manifold has its natural Lie-group structure and acts smoothly.</p><h3>Correspondence with Lean</h3><p>The specialization here is to the actual distance obtained from the supplied compact Riemannian geometry, on its existing compact-open topology. The conclusion includes smooth joint evaluation. This does not assert that every metric isometry preserves the quaternionic structure.</p><p class="locator">Petersen, Theorem 5.6.19, author pp. 168–172.</p><p><a href="https://www.math.ucla.edu/~petersen/RG.pdf">PETERSEN</a></p><p class="small"></p></section></div></details>
+<details class="node" id="closedEmbedding"><summary><span class="badge">closedEmbedding</span><strong>Closed subgroups inherit Lie structure</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- General Lee 20.12 closed-subgroup input. The Hausdorff and second-
+countable ambient hypotheses are explicit, as in the book&#x27;s manifold
+convention. The output dimension is existential. -/
+def LeeClosedEmbeddingTheorem : Prop :=
+  ∀ {E A B : Type}
+    [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+    [TopologicalSpace A] [Group A] [IsTopologicalGroup A]
+    [TopologicalSpace B] [T2Space B] [SecondCountableTopology B]
+    [Group B] [ChartedSpace E B]
+    [IsManifold 𝓘(ℝ,E) ∞ B] [LieGroup 𝓘(ℝ,E) ∞ B]
+    (f : A →* B), IsClosedEmbedding f →
+      ∃ d : ℕ, Nonempty (EmbeddedRealLieAtlas E A B f d)</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Reformulation of a literature theorem</p><h3>Mathematical statement · paraphrase</h3><p>A closed subgroup of a finite-dimensional Lie group is an embedded Lie subgroup.</p><h3>Correspondence with Lean</h3><p>For a continuous group homomorphism that is a closed embedding into the given real Lie group, the contract supplies a finite-dimensional real model, compatible manifold structure, Lie-group structure, and smooth embedding of the original topological group.</p><p class="locator">Lee, Theorem 20.12, pp. 523–525.</p><p><a href="https://doi.org/10.1007/978-1-4419-9982-5">LEE</a></p><p class="small"></p></section></div></details>
+<details class="node" id="orbital"><summary><span class="badge">orbital</span><strong>The compact symplectic orbital integral</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- The literal interleaved-block specialization of Eq. (1.8). -/
+def LiteralInterleavedFormula : Prop :=
+  ∀ (n : ℕ), 0 &lt; n → ∀ (x y : Fin n → ℝ),
+    (∀ i, 0 &lt; x i) → (∀ i, 0 &lt; y i) →
+    realOddVandermonde x * realOddVandermonde y ≠ 0 →
+    (∫ g : stabilizer (interleavedJ n),
+      Real.exp ((Matrix.trace (interleavedAntiHermitianDiagonal x *
+        (g.1 : Matrix (Fin n × Fin 2) (Fin n × Fin 2) ℂ) *
+        (interleavedAntiHermitianDiagonal y)ᴴ *
+        (g.1 : Matrix (Fin n × Fin 2) (Fin n × Fin 2) ℂ)ᴴ)).re / 2)
+      ∂probability (interleavedJ n)) =
+      (OrbitalOddDeterminantBase.sourceConstant n : ℝ) *
+        realSourceDeterminant x y /
+        (realOddVandermonde x * realOddVandermonde y)</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Literal specialized formula</p><h3>Mathematical statement · paraphrase</h3><p>For the interleaved anti-Hermitian diagonal matrices X and Y, the normalized Haar integral of exp(tr(X g Y† g†)/2) equals cₙᵒᵈᵈ det[2 sinh(xᵢyⱼ)] / (Δᵒᵈᵈ(x) Δᵒᵈᵈ(y)).</p><h3>Correspondence with Lean</h3><p>The source is used for positive parameters and nonzero Vandermonde denominator. The code fixes the stabilizer of the interleaved symplectic matrix, normalized Haar probability, trace, determinant and constant. Their definitions are expandable below; passage to grouped coordinates is proved internally.</p><p class="locator">Forrester–Ipsen–Liu–Zhang, equations (1.5), (1.6), (1.8).</p><p><a href="https://arxiv.org/abs/1711.10691v1">FILZ</a></p><p class="small"></p></section></div></details>
+<details class="node" id="positiveContact"><summary><span class="badge">positiveContact</span><strong>Positive contact geometry on the twistor</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- Unnormalized positive-scalar complex/contact/Kähler–Einstein twistor
+existence, retaining its positive Chern Ricci consequence on the same
+selected actual complex/contact data. Nitta–Takeuchi (1987), §2,
+pp. 149–151, especially (2.9), (2.10), and the positive Ricci computation
+on p. 151. -/
+def PositiveRicciContactExistence : Prop :=
+  ∀ {E M : Type}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [Nontrivial E] [FiniteDimensional ℝ E]
+    [TopologicalSpace M] [T2Space M] [SecondCountableTopology M] [Nonempty M]
+    [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    (P : CompactConnectedPositiveQuaternionicKahlerGeometry (E := E) (M := M))
+    (n : ℕ), 2 ≤ n → Module.finrank ℝ E = 4*n →
+    ∃ A : CompatibleComplexAtlas P.tangent P.connection n,
+      ∃ _C : NondegenerateHolomorphicContactData P.tangent P.connection n A,
+      letI := A.charts
+      ∃ m : HermitianBundleMetric (E := ComplexTwistorModel n)
+          (A.complexTangentCore P.tangent P.connection),
+        m.PositiveChernRicci (A.complexTangentCore P.tangent P.connection)</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Geometric construction from the literature</p><h3>Mathematical statement · paraphrase</h3><p>The twistor of a positive quaternionic-Kähler manifold of quaternionic dimension at least two carries its natural complex contact geometry and the associated positive-Ricci structure.</p><h3>Correspondence with Lean</h3><p>The contract constructs a compatible complex atlas and nondegenerate holomorphic contact data on the actual sphere bundle, with the specified positive Ricci data. The original metric may have any positive scalar normalization; the chosen atlas must match the already defined almost-complex tensor.</p><p class="locator">Nitta–Takeuchi §2, pp. 149–151, equations (2.9)–(2.10).</p><p><a href="https://www.jstage.jst.go.jp/article/jmath1948/39/1/39_1_139/_pdf">NT</a></p><p class="small"></p></section></div></details>
+<details class="node" id="kodaira"><summary><span class="badge">kodaira</span><strong>A positive line is ample</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- The published Kodaira embedding theorem in the actual represented-line
+presentation. The conclusion means that some positive tensor power&#x27;s
+complete holomorphic evaluation is a topological embedding with injective
+complex manifold derivative. -/
+def PositiveHermitianLineAmpleTheorem : Prop :=
+  ∀ {B : Type uB} {F : Type uF}
+    [TopologicalSpace B] [T2Space B] [SecondCountableTopology B]
+    [CompactSpace B] [Nonempty B]
+    [NormedAddCommGroup F] [NormedSpace ℂ F] [FiniteDimensional ℂ F]
+    [ChartedSpace F B] [IsManifold 𝓘(ℂ,F) ∞ B]
+    (L : LineCore.{uI} (B := B) 𝓘(ℂ,F))
+    (m : HermitianLineMetric L),
+    m.PositiveChernCurvature → AmpleCore 𝓘(ℂ,F) L</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Reformulation of Kodaira embedding</p><h3>Mathematical statement · paraphrase</h3><p>A positive Hermitian holomorphic line bundle on a compact complex manifold has a sufficiently high tensor power whose holomorphic sections give a projective embedding.</p><h3>Correspondence with Lean</h3><p>Positivity is the explicit Chern-curvature test for a smooth Hermitian metric. AmpleCore refers to finite families of sections of powers of that same line and the resulting genuine projective embedding.</p><p class="locator">Wells VI §4, Theorem 4.1 and proof, pp. 234–240.</p><p><a href="https://doi.org/10.1007/978-0-387-73892-5">WELLS</a></p><p class="small"></p></section></div></details>
+<details class="node" id="picardAlternative"><summary><span class="badge">picardAlternative</span><strong>Picard generator or contact homogeneity</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- **Reviewed derived literature corollary T2-A.** Its first conclusion is a
+bijective power map on the actual represented holomorphic line-class group;
+its second is transitivity of actual biholomorphisms preserving the same
+complex contact kernel in both directions. Chow/GAGA/Picard and exceptional
+contact actions are part of the disclosed external derivation, not internally
+proved here. Algebraic group/action comparison is not a conclusion. -/
+def AnalyticContactPicardOrHomogeneousCorollary : Prop :=
+  ∀ {R H Z : Type}
+    [NormedAddCommGroup R] [NormedSpace ℝ R]
+    [TopologicalSpace H] [TopologicalSpace Z] [ChartedSpace H Z]
+    (IR : ModelWithCorners ℝ R H) [IsManifold IR ∞ Z]
+    [CompactSpace Z] [T2Space Z] [SecondCountableTopology Z]
+    [ConnectedSpace Z]
+    (n : ℕ) (_hn : 1 ≤ n)
+    (G : ContactGeometry (IR := IR) (Z := Z) n)
+    (D : Z → Submodule ℂ (ComplexTwistorModel n)),
+    ContactGeometry.IsComplexContactKernel IR G D →
+    letI := G.charts
+    letI := G.complexManifold
+    AmpleCore 𝓘(ℂ,ComplexTwistorModel n) (ContactGeometry.lineCore IR G) →
+    Function.Bijective (fun r : ℤ =&gt;
+      (Quotient.mk _ (ContactGeometry.lineCore IR G) :
+        CoreClass.{0} (B := Z) 𝓘(ℂ,ComplexTwistorModel n)) ^ r) ∨
+    (∀ z w : Z, ∃ f : Automorphisms D, f.1 z = w)</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>BKK’s trichotomy leaves a Picard-generator case, projective space with its standard contact line, or a projectivized cotangent bundle of projective space.</p><h3>Correspondence with Lean</h3><p>The two exceptional spaces are contact homogeneous. Combining this with the trichotomy and GAGA gives the encoded alternative: the original contact line generates the Picard group, or its actual contact automorphism group acts transitively.</p><p class="locator">BKK Proposition 2.3; LeBrun §2, Examples 2.1–2.2 and Proposition 2.3.</p><p><a href="https://aif.centre-mersenne.org/item/10.5802/aif.3510.pdf">BKK</a>, <a href="https://www.math.stonybrook.edu/~claude/fcq.pdf">LEBRUN</a>, <a href="https://aif.centre-mersenne.org/item/10.5802/aif.59.pdf">SERRE</a></p><p class="small"></p></section></div></details>
+<details class="node" id="swEquation"><summary><span class="badge">swEquation</span><strong>The twistor Euler characteristic as an index</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>def SWEquation22Source : Prop :=
+  ∀ {E M : Type}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [FiniteDimensional ℝ E] [Nontrivial E] [MeasurableSpace E] [BorelSpace E]
+    [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    [Nonempty M] [MeasurableSpace M] [BorelSpace M] [CompactSpace M]
+    [T2Space M] [SecondCountableTopology M]
+    (S : QuaternionicStructure E)
+    (P : CompactConnectedPositiveQuaternionicKahlerGeometry (E := E) (M := M))
+    (A : CompatibleComplexAtlas P.tangent P.connection S.quaternionicDimension)
+    (C : NondegenerateHolomorphicContactData P.tangent P.connection
+      S.quaternionicDimension A)
+    [HasSheafify (Opens.grothendieckTopology
+      (TopCat.of (SphereBundleTotal P.tangent))) (ModuleCat ℂ)]
+    [HasExt.{w} (TopCat.Sheaf (ModuleCat ℂ)
+      (TopCat.of (SphereBundleTotal P.tangent)))],
+    SWEquation22OnPQK S P A C</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Index identity in the chosen normalization</p><h3>Mathematical statement · paraphrase</h3><p>For nonnegative r, the twistor Euler characteristic χ(Z,Lʳ) is ⟨Â(M) ch(Symⁿ⁺²ʳ H), [M]⟩.</p><h3>Correspondence with Lean</h3><p>The equality is between genuine sheaf cohomology and the development’s explicit Chern–Weil characteristic expression. The quaternionic class uses p₁(Q)/4 with representative −tr(FQ²)/(32π²), and integration uses the quaternionic orientation. Negative twists and later numerical bounds are not additional source assertions.</p><p class="locator">Semmelmann–Weingart §2, equation (2.2), author p. 3.</p><p><a href="https://arxiv.org/abs/math/0208079v1">SW</a></p><p class="small"></p></section></div></details>
+<details class="node" id="swCohomology"><summary><span class="badge">swCohomology</span><strong>Cohomology of powers of the contact line</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- The registered SW source theorem, formulated universally on the
+actual compact positive quaternionic-Kähler manifold and its actual
+nondegenerate holomorphic contact line. The canonical-line isomorphism
+is a geometric prerequisite, not a conclusion assumed in the record. -/
+def SWCohomologicalSource : Prop :=
+  ∀ {E : Type u} {M : Type v}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [Nontrivial E] [FiniteDimensional ℝ E]
+    [TopologicalSpace M] [T2Space M] [SecondCountableTopology M] [Nonempty M]
+    [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    (P : CompactConnectedPositiveQuaternionicKahlerGeometry (E := E) (M := M))
+    (n : ℕ) (_hn : 2 ≤ n) (_hDim : Module.finrank ℝ E = 4 * n)
+    (A : CompatibleComplexAtlas P.tangent P.connection n)
+    (C : NondegenerateHolomorphicContactData P.tangent P.connection n A)
+    [HasSheafify (Opens.grothendieckTopology
+      (TopCat.of (SphereBundleTotal P.tangent))) (ModuleCat.{v} ℂ)]
+    [HasExt.{w} (TopCat.Sheaf (ModuleCat.{v} ℂ)
+      (TopCat.of (SphereBundleTotal P.tangent)))],
+    Nonempty (HolomorphicContactCanonicalIso
+      P.tangent P.connection n A C.contact.line) →
+      SWCohomologyConclusions P C</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Combined cohomological input</p><h3>Mathematical statement · paraphrase</h3><p>The twistor line has finite-dimensional cohomology, the Kodaira vanishing ranges and Serre duality; its holomorphic sections in degree one identify with complexified Killing fields.</p><h3>Correspondence with Lean</h3><p>The contract displays all ranges: higher cohomology vanishes for r ≥ 0, degrees at most 2n vanish for r &lt; 0, and duality relates (r,s) to (−r−n−1,2n+1−s). The canonical-line isomorphism is a prerequisite. Hilbert values are derived later.</p><p class="locator">Semmelmann–Weingart §2, pp. 2–3, the discussion surrounding equations (2.1)–(2.2).</p><p><a href="https://arxiv.org/abs/math/0208079v1">SW</a></p><p class="small"></p></section></div></details>
+<details class="node" id="ballmann"><summary><span class="badge">ballmann</span><strong>Positive anticanonical curvature gives simple connectedness</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- General published positive-anticanonical simply-connectedness theorem,
+expressed on the determinant of the *actual* holomorphic tangent core.
+This is a literature premise, not a proof of Ballmann/Kobayashi/Calabi–Yau. -/
+def BallmannPositiveAnticanonicalSimplyConnected : Prop :=
+  ∀ {B F : Type}
+    [TopologicalSpace B] [T2Space B] [SecondCountableTopology B]
+    [CompactSpace B] [PreconnectedSpace B] [Nonempty B]
+    [NormedAddCommGroup F] [NormedSpace ℂ F] [FiniteDimensional ℂ F]
+    [ChartedSpace F B] [IsManifold 𝓘(ℂ,F) ∞ B]
+    (m : HermitianLineMetric (anticanonicalLineCore (B := B) (F := F))),
+    m.PositiveChernCurvature → SimplyConnectedSpace B</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>A compact connected complex manifold with positive anticanonical bundle is simply connected: the positive first-Chern class yields a positive-Ricci Kähler metric, and Kobayashi’s theorem applies.</p><h3>Correspondence with Lean</h3><p>The line is the determinant of the actual holomorphic tangent bundle. The auxiliary Kähler metric need not equal the supplied Hermitian metric. The external chain includes the Chern-form interpretation and the Calabi–Yau consequence used by Ballmann.</p><p class="locator">§5.4 (5.59), p. 78; Theorem 6.12, p. 85; Corollary 7.3 and following discussion, pp. 88–89.</p><p><a href="https://people.maths.ox.ac.uk/~joyce/Nairobi2019/BallmannKahlerManifolds.pdf">BALLMANN</a></p><p class="small"></p></section></div></details>
+<details class="node" id="wolfLeBrun"><summary><span class="badge">wolfLeBrun</span><strong>Homogeneous twistor implies metric symmetry</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- Wolf–LeBrun homogeneous-contact-to-intrinsic-symmetry corollary,
+restricted to genuine compact connected positive quaternionic-Kähler
+geometries of quaternionic dimension at least two. -/
+def HomogeneousContactTwistorSymmetryCorollary : Prop :=
+  ∀ {E M : Type}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [FiniteDimensional ℝ E] [Nontrivial E]
+    [TopologicalSpace M] [T2Space M]
+    [SecondCountableTopology M] [Nonempty M]
+    [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    (P : CompactConnectedPositiveQuaternionicKahlerGeometry (E := E) (M := M))
+    (n : ℕ) (_hn : 2 ≤ n)
+    (_hDim : Module.finrank ℝ E = 4*n)
+    (A : CompatibleComplexAtlas P.tangent P.connection n)
+    (C : NondegenerateHolomorphicContactData P.tangent P.connection n A),
+    SimplyConnectedSpace (SphereBundleTotal P.tangent) →
+    (∀ z w : SphereBundleTotal P.tangent,
+      ∃ f : ContactAutomorphisms P.tangent P.connection A C.contact.line,
+        f.1 z = w) →
+    IsRiemannianSymmetric P.tangent</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Derived literature corollary</p><h3>Mathematical statement · paraphrase</h3><p>Homogeneous contact geometry identifies the relevant twistor with that of a quaternionic symmetric space; the twistor determines the normalized positive quaternionic-Kähler metric.</p><h3>Correspondence with Lean</h3><p>The combined corollary returns intrinsic symmetry of the given metric from a simply connected genuine twistor and transitivity of its actual contact automorphism group. Identification of the metric up to positive scale and preservation of point symmetries under scaling are part of the correspondence being assumed.</p><p class="locator">Wolf Theorems 5.4 and 6.1; LeBrun §2 and Corollary 3.4.</p><p><a href="https://math.berkeley.edu/~jawolf/publications.pdf/paper_024.pdf">WOLF</a>, <a href="https://www.math.stonybrook.edu/~claude/fcq.pdf">LEBRUN</a></p><p class="small"></p></section></div></details>
+<details class="node" id="derdzinski"><summary><span class="badge">derdzinski</span><strong>The four-dimensional positive Einstein case</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- The general metric corollary of Derdzinski 33.4(a), with every local
+Einstein and oriented Weyl equation visible. In dimension four a quaternionic
+frame supplies the orientation only; no holonomy classification is invoked. -/
+def DerdzinskiFourSymmetrySource : Prop :=
+  ∀ {E M : Type}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [FiniteDimensional ℝ E] [Nontrivial E]
+    [TopologicalSpace M] [T2Space M] [SecondCountableTopology M] [Nonempty M]
+    [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    (P : PositiveQuaternionicKahlerGeometry (E := E) (M := M))
+    (hdim : Module.finrank ℝ E = 4),
+    IsCompact (Set.univ : Set M) → IsPreconnected (Set.univ : Set M) →
+    (∀ p y (hy : y ∈ (extChartAt 𝓘(ℝ,E) p).target) v w,
+      localRicci P.tangent P.connection p y hy v w =
+        (localScalarCurvature P.tangent P.connection p y hy / 4) * inner ℝ v w) →
+    (∀ p y (hy : y ∈ (extChartAt 𝓘(ℝ,E) p).target) u v z (hz : ‖z‖ = 1),
+      let Q := P.tangent.reduction.Q (achart E p)
+      let b := frameBasis Q hdim z hz
+      let β := HyperholomorphicExterior.form b.toBasis
+        (metricCorrectedWeylOperator P p y hy u v).toLinearMap;
+      -(canonicalStar Q hdim β) = β) →
+    IsRiemannianSymmetric P.tangent</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Separate four-dimensional corollary</p><h3>Mathematical statement · paraphrase</h3><p>A compact oriented positive Einstein four-manifold with the specified vanishing Weyl half is isometric, up to scale, to the standard sphere or complex projective plane.</p><h3>Correspondence with Lean</h3><p>The contract packages the resulting global point symmetries, with the source’s orientation and curvature conventions translated to the actual metric. The development separately imposes the dimension-four Einstein/Weyl convention. This is an additional premise of both metric endpoints, outside the 15-field Sources record.</p><p class="locator">Derdzinski Theorem 33.4(a), author p. 186; conventions (4.23), (4.34).</p><p><a href="https://people.math.osu.edu/derdzinski.1/courses/7711/em.pdf">DERDZINSKI</a></p><p class="small"></p></section></div></details>
+<details class="node" id="amann"><summary><span class="badge">amann</span><strong>The additional intersection sign for E14</strong></summary>
+        <div class="comparison"><section class="code-side"><p class="eyebrow">Exact Lean source</p><pre><code>/-- The separately disclosed E14 sign source; absent from `Sources` and C12. -/
+def AmannInput : Prop :=
+  ∀ {E M : Type} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    [FiniteDimensional ℝ E] [Nontrivial E] [MeasurableSpace E] [BorelSpace E]
+    [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ,E) ∞ M]
+    [Nonempty M] [MeasurableSpace M] [BorelSpace M] [CompactSpace M] [T2Space M],
+    ManifoldAmannIntersectionInput.AmannKrainesRayInput (E := E) (M := M)</code></pre><details><summary>Elaborated type, including implicit parameters</summary><pre><code>Prop</code></pre></details></section>
+        <section class="math-side"><p class="eyebrow">Separate E14 input</p><h3>Mathematical statement · paraphrase</h3><p>Amann gives positivity of the signed pairing Q(x,y) = (−1)ʳᐟ² ∫ x ∧ y ∧ uⁿ⁻ʳᐟ² on even-degree cohomology, for the canonical quaternionic class u.</p><h3>Correspondence with Lean</h3><p>Only a weaker, nonnegative square statement for some positive multiple of the actual Kraines class is requested. The positive-ray identification uses Semmelmann–Weingart; scaling to the analytic quarter class is proved internally. This premise is separate from Sources and occurs only in the E14 endpoints.</p><p class="locator">Amann v1, Theorem 1.2, p. 6; Semmelmann–Weingart §2, the Kraines-form normalization.</p><p><a href="https://arxiv.org/abs/0911.4587v1">AMANN</a>, <a href="https://arxiv.org/abs/math/0208079v1">SW</a></p><p class="small">The preprint version is explicit. The final journal text has not been directly compared; the Lean proof checks the implication from the displayed contract, not its fidelity to the paper.</p></section></div></details></div><button id="load-more" hidden>Show more</button><noscript><p>Enable JavaScript for search, definition navigation, and target browsing. The literature comparisons above and the <a href="data/kernel.json">complete declaration export</a> remain available.</p></noscript></section>
+</div>
+</main>
+<footer class="site-footer"><span>Lean 4.28.0 · snapshot <code>2ed2d163e0ea</code></span><span><a href="data/kernel.json">Declaration data</a> · <a href="data/catalogue.json">Explanations</a> · <a href="data/source-manifest.json">Source manifest</a></span></footer>
+<script src="assets/data.js"></script><script src="assets/explorer.js"></script>
+</body></html>

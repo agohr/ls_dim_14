@@ -1,0 +1,19 @@
+name = "QuaternionicSymmetry"
+version = "0.1.0"
+defaultTargets = ["QuaternionicSymmetry", "Audit"]
+# Resource-only flags do not invalidate existing mathematical build artifacts.
+weakLeanArgs = ["-j1", "-M8192"]
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.28.0"
+
+[[lean_lib]]
+name = "QuaternionicSymmetry"
+
+[[lean_lib]]
+name = "Audit"

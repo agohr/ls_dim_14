@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Python verification scripts and the Lean development accompanying The LeBrun–Salamon conjecture is true in dimensions up to 56.">
+<title>Supplementary Code and Data for the Paper &quot;The LeBrun–Salamon conjecture is true in dimensions up to 56&quot;</title><link rel="stylesheet" href="assets/style.css">
+</head>
+<body><a class="skip" href="#main">Skip to content</a>
+<main id="main" class="readme">
+<h1>Supplementary Code and Data for the Paper &quot;The LeBrun–Salamon conjecture is true in dimensions up to 56&quot;</h1>
+<p><strong>Authors:</strong> Aron Gohr, Marie-Amelie Lawn, Travis Schedler and Jordi Daura Serrano.</p>
+<p>The repository contains exact Python checks of the finite identities and a Lean development of conditional symmetry results for compact connected positive quaternionic-Kähler manifolds.</p>
+{{REPOSITORY_LINK}}
+<h2>Repository contents</h2>
+<table><thead><tr><th>Directory</th><th>Contents</th></tr></thead><tbody>
+<tr><td><code>python/</code></td><td>Exact rational verification scripts, coefficient data, and a README describing each check.</td></tr>
+<tr><td><code>lean/</code></td><td>Lean sources, pinned dependencies, an axiom audit, and build instructions.</td></tr>
+<tr><td><code>site/lean/</code></td><td><a href="lean/index.html">Lean code comparison and search</a>, with theorem statements, definitions, explanations, and references.</td></tr>
+</tbody></table>
+<h2>Run the Python checks</h2>
+<p>Python 3.10 or later is sufficient. No third-party packages or Lean installation are required. From the repository root:</p>
+<pre><code>python3 -B python/check_all.py</code></pre>
+<p>The scripts reconstruct index densities, verify positive polynomial certificates and cone separators, and check the rational one-square witnesses in dimensions 13 and 14. All arithmetic is exact. Individual commands and normalization conventions are documented in <code>python/README.md</code>.</p>
+<h2>Build the Lean development</h2>
+<p>Install <a href="https://leanprover-community.github.io/get_started.html">Lean and elan</a>, then run:</p>
+<pre><code>cd lean
+lake exe cache get
+lake build
+lake env lean -j1 -M8192 Audit.lean</code></pre>
+<p>The project pins Lean 4.28.0 and mathlib v4.28.0. Initial setup downloads the toolchain and dependencies. Later builds can run offline when these files are cached. For editor support, open <code>lean/</code> in VS Code with the Lean 4 extension.</p>
+<h2>Mathematical scope</h2>
+<p>The Lean endpoints prove intrinsic symmetry of the given metric for quaternionic dimensions 1–12, and through 14 with an additional Amann intersection premise. They assume 15 explicit literature inputs and a separate four-dimensional input. The conclusion is global metric point symmetry; the endpoints do not enumerate Wolf spaces.</p>
+<p>The Python scripts verify polynomial identities and coefficient signs. The geometric interpretations and literature inputs are separate from these calculations. The <a href="lean/index.html?view=targets">exact endpoint statements</a> and <a href="lean/index.html">source comparisons</a> are available in the Lean explorer.</p>
+<h2>Offline browsing</h2>
+<p>Open this file directly in a browser, or open <code>site/lean/index.html</code> for the code comparison and search. No server, external assets, or JavaScript packages are required. Alternatively, from the repository root:</p>
+<pre><code>python3 -m http.server 8000 --directory site</code></pre>
+<p>Then visit <a href="http://localhost:8000/">http://localhost:8000/</a>. Bibliographic links open external publications.</p>
+<h2>Citing the Paper</h2>
+<p>If you use this code or data in your research, please cite the paper. The URL and publication details will be added when available.</p>
+<pre><code>@unpublished{GLSD26,
+  author = {Gohr, Aron and Lawn, Marie-Amelie and Schedler, Travis and Daura Serrano, Jordi},
+  title  = {The {LeBrun--Salamon} conjecture is true in dimensions up to 56},
+  note   = {Manuscript},
+  year   = {2026},
+  url    = {PAPER_URL_TO_BE_ADDED},
+}</code></pre>
+<h2>Reproducibility</h2>
+<p>The {{SOURCE_FILES}} mathematical Lean files are unchanged from development commit <code>{{FULL_COMMIT}}</code>, and now reside under <code>lean/</code>. The <a href="lean/data/source-manifest.json">source manifest</a> lists paths relative to that directory and their checksums. The repository's <code>VALIDATION.md</code> records the checks performed.</p>
+</main></body></html>

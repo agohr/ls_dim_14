@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lean code comparison and search</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="page-header"><a href="../index.html">← Repository overview</a></header>
+<main id="main" class="explorer-main">
+<h1>Lean code comparison and search</h1>
+<p>Compare the exact Lean source and elaborated types with mathematical explanations. Follow the linked definitions or search the bundled statements.</p>
+<p class="small">The 15 literature inputs and two separate premises are assumptions of conditional theorems. Mathematical explanations are editorial paraphrases. The graph follows statement encodings, not theorem proof bodies.</p>
+<div class="explorer-layout">
+<aside class="explorer-sidebar" aria-label="Explorer controls">
+<div class="view-buttons" role="group" aria-label="Declaration category"><button data-view="literature" aria-pressed="true">Literature inputs <span>15 + 2</span></button><button data-view="targets" aria-pressed="false">Target theorems <span>4</span></button><button data-view="definitions" aria-pressed="false">Encoding definitions <span>{{DEFINITIONS}}</span></button><button data-view="all" aria-pressed="false">All declarations</button></div>
+<label for="search">Search code, statements, citations</label><input id="search" type="search" placeholder="e.g. contact line, Amann" autocomplete="off">
+<label for="root-filter">Relevant to</label><select id="root-filter"><option value="">Every target and input</option></select>
+<label class="checkbox"><input type="checkbox" id="show-generated">Include compiler helpers</label><button id="reset" class="text-button">Reset filters</button>
+</aside>
+<section class="results" aria-label="Declarations"><div class="results-header"><h2 id="view-title">Literature inputs</h2><p id="result-count" role="status" aria-live="polite">17 literature inputs</p></div><div id="declarations">{{PRINTABLE}}</div><button id="load-more" hidden>Show more</button><noscript><p>Enable JavaScript for search, definition navigation, and target browsing. The literature comparisons above and the <a href="data/kernel.json">complete declaration export</a> remain available.</p></noscript></section>
+</div>
+</main>
+<footer class="site-footer"><span>Lean 4.28.0 · snapshot <code>{{COMMIT}}</code></span><span><a href="data/kernel.json">Declaration data</a> · <a href="data/catalogue.json">Explanations</a> · <a href="data/source-manifest.json">Source manifest</a></span></footer>
+<script src="assets/data.js"></script><script src="assets/explorer.js"></script>
+</body></html>
