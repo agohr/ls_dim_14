@@ -33,6 +33,11 @@ already downloaded toolchain, dependencies, and cache.
 There are 3,171 mathematical Lean files. The first build may take time and
 substantial disk space. The Lake configuration supplies `-j1 -M8192` to each
 Lean process; this is a per-process setting rather than a total Lake memory cap.
+These resource flags are `weakLeanArgs`, so changing them does not force Lake
+to recheck cached modules. A successful incremental build does not measure
+the memory required for a fresh compilation. The dimension-11/12 character
+integration proofs use a general lemma before specializing the polynomials,
+keeping their fresh kernel checks within the existing 8192 MiB limit.
 
 `Audit.lean` checks every project declaration for transitive axiom dependencies.
 It permits `propext`, `Classical.choice`, and `Quot.sound`, and rejects

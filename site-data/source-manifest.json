@@ -1,5 +1,5 @@
 {
-  "source_commit": "2ed2d163e0ea37930f1d478babaf38b4ad1b7520",
+  "source_commit": "a3621a77ac750cc2affd416fd9a8f8bdf22448d8",
   "lean_toolchain": "leanprover/lean4:v4.28.0",
   "source_files": [
     {
@@ -9168,7 +9168,7 @@
     },
     {
       "path": "QuaternionicSymmetry/ManifoldTangentCharacterNumber.lean",
-      "sha256": "32f9d7aa861a16ae377972bafff550dbaf3f8a61e5eb8ab70a22211fb848e454"
+      "sha256": "9347001520ae432ed11bb2a789e58231b3bcf1f78d149c7464ab5dcd21222ad2"
     },
     {
       "path": "QuaternionicSymmetry/ManifoldTangentCharacterThirteenFourteen.lean",
