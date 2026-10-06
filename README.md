@@ -83,7 +83,7 @@ If you use this code or data in your research, please cite the paper. The URL an
   title  = {The {LeBrun--Salamon} conjecture is true in dimensions up to 56},
   note   = {Manuscript},
   year   = {2026},
-  url    = {PAPER_URL_TO_BE_ADDED},
+  url    = {arXiv:2610.06336},
 }
 ```
 
